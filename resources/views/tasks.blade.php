@@ -5,7 +5,18 @@
         </h2>
     </x-slot>
 
-    <div style="padding: 30px;text-align: center;background-color: lightgray;margin-left: 15rem;margin-right: 15rem;">
+    <style>
+        .hide {
+          display: none;
+        }
+            
+        .myDIV:hover + .hide {
+          display: inline;
+          
+        }
+
+    </style>
+    <div style="padding: 30px;text-align: center;margin-left: 15rem;margin-right: 15rem;">
 
 
 
@@ -25,22 +36,25 @@
 
 
         foreach ($users as $user) {
-            ?><h1 style="font-weight: bold; font-size: 1.3rem;"><?php
+            ?><h1 style="font-weight: bold; font-size: 1.3rem; text-align: justify; margin-bottom: 10px;padding: 5px;"><?php
 
             echo $user->enu_nome."<br>"; 
 
             ?></h1> <?php
 
             foreach ($alts as $alt) {
-                ?> <h2 style="padding: 5px;"> <?php
+                ?> <h2 style="padding: 5px;text-align: justify; font-size: 1.2rem;"> <?php
                 echo $alt->alt_nome."<br>"; 
                 ?> </h2> <?php
             }
             foreach ($users as $user) {
-                ?><h2 style="color:green;"> <?php
-                echo "Resposta: ";
-                echo $user->enu_correcao."<br><br>"; 
-                ?></h2> <?php
+                ?> <h2 style="padding: 5px;text-align: justify;"> <?php
+                
+                ?><h2 class="myDIV" style=" display: inline;font-weight: bold;font-size: 1.3rem;"> <?php echo "Resposta: "; ?> 
+                
+                <h2 class="hide" style="font-size: 1.3rem;"> <?php echo $user->enu_correcao; ?> </h2> </h2>
+
+                </h2> <hr> <br> <?php
             }
 
         }
