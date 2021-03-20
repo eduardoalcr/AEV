@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Enunciado extends Model
 {
     use HasFactory;
+    protected $fillable = ['enu_codigo', 'enu_nome','enu_mat_codigo'];
 }

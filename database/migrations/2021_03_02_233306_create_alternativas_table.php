@@ -15,8 +15,7 @@ class CreateAlternativasTable extends Migration
     {
         Schema::create('alternativas', function (Blueprint $table) {
             $table->id('alt_codigo');
-            $table->string('alt_nome');
-            $table->boolean('alt_correcao');
+            $table->string('alt_nome',3000);
             $table->unsignedBigInteger('alt_enu_codigo')->unsigned();
             $table->foreign('alt_enu_codigo')->references('enu_codigo')->on('enunciados');
             $table->timestamps();
