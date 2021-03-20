@@ -7,19 +7,14 @@
 
     <div style="padding: 30px;text-align: center;background-color: lightgray;margin-left: 15rem;margin-right: 15rem;">
 
-
-
         <?php 
             //$userId = Auth::id();
             //echo ($userId);
 
 
         for ($a=1; $a < 15; $a++) { 
-            
-        
-            
-
-            $users = DB::select('SELECT * FROM enunciados WHERE enu_codigo = ? AND enu_mat_codigo = 2' , [$a]);
+                       
+            $users = DB::select('SELECT * FROM enunciados WHERE enu_codigo = ? AND enu_mat_codigo = 5' , [$a]);
             
             $alts = DB::select('SELECT * FROM alternativas WHERE alt_enu_codigo = ?' , [$a]);
 

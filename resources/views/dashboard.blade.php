@@ -9,7 +9,7 @@
     <style>
         #laink {
             font-size: 2.5rem; 
-            padding: 10px;
+            padding: 15px;
         }
         #fraseUm {
             font-weight: bold;
@@ -33,20 +33,11 @@
     <div id="mainDiv">
         <label id="fraseUm">Escolha uma matéria</label>
         <br>
-        <?php 
-            //$userId = Auth::id();
-            //echo ($userId);
-            $users = DB::table('materias')->get();
-
-            foreach ($users as $user) {
-            ?>
-            <a href="<?php echo $user->mat_nome; ?>-page" id="laink">
-                <?php
-            echo $user->mat_nome; 
-                ?>
-            </a>
-            <?php } ?>
-              
-          </div>
+        <a href="{{route ('portugues.index')}}" id="laink">Português</a>
+        <a href="{{route ('historia.index')}}" id="laink">História</a>
+        <a href="{{route ('sociologia.index')}}" id="laink">Sociologia</a>
+        <a href="{{route ('filosofia.index')}}" id="laink">Filosofia</a>
+        <a href="{{route ('artes.index')}}" id="laink">Artes</a>
+</div>
       
 </x-app-layout>
