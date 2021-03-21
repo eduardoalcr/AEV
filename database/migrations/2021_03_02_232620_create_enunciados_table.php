@@ -15,8 +15,8 @@ class CreateEnunciadosTable extends Migration
     {
         Schema::create('enunciados', function (Blueprint $table) {
             $table->id('enu_codigo');
-            $table->string('enu_nome');
-            $table->string('enu_correcao');
+            $table->string('enu_nome',1500);
+            $table->string('enu_correcao',300);
             $table->unsignedBigInteger('enu_mat_codigo')->unsigned();
             $table->foreign('enu_mat_codigo')->references('mat_codigo')->on('materias');
             $table->timestamps();

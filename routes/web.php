@@ -11,12 +11,6 @@ Route::get('/', [LoginController::class, 'login']);
 
 Route::get('/cadastro', [CadastroController::class, 'cadastro']);
 
-Route::get('/index', [IndexController::class, 'index']);
-
-
-
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
