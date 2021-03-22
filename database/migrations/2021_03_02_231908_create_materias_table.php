@@ -19,7 +19,7 @@ class CreateMateriasTable extends Migration
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

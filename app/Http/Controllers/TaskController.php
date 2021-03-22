@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -34,7 +35,35 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $enunciado = $request->get("enun");
+        $materia = $request->get("materia");
+        $correcao = $request->get("correcao");
+
+        $qa = $request->get("qa");
+        $qb = $request->get("qb");
+        $qc = $request->get("qc");
+        $qd = $request->get("qd");
+        $qe = $request->get("qe");
+
+
+
+        DB::table('enunciados')->insert([
+            ['enu_nome' => $enunciado, 'enu_correcao' => $correcao, 'enu_mat_codigo' => $materia]
+        ]);
+
+        $ultimos = DB::select('SELECT * FROM enunciados ORDER BY enu_codigo DESC LIMIT 1');
+        
+        foreach ($ultimos as $ultimo) {
+             $ultimodos = $ultimo->enu_codigo;
+        }
+        DB::table('alternativas')->insert([
+            ['alt_nome' => $qa, 'alt_enu_codigo' => $ultimodos],['alt_nome' => $qb, 'alt_enu_codigo' => $ultimodos],['alt_nome' => $qc, 'alt_enu_codigo' => $ultimodos],['alt_nome' => $qd, 'alt_enu_codigo' => $ultimodos],['alt_nome' => $qe, 'alt_enu_codigo' => $ultimodos]
+       ]); 
+        
+
+
+        return view('dashboard');
+
     }
 
     /**

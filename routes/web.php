@@ -26,4 +26,3 @@ Route::resource(name:'historia', controller: \App\Http\Controllers\HistoriaContr
 Route::resource(name:'sociologia', controller: \App\Http\Controllers\SociologiaController::class);
 
 Route::resource(name:'filosofia', controller: \App\Http\Controllers\FilosofiaController::class);
-
