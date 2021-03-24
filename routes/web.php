@@ -6,13 +6,10 @@ use App\Http\Controllers\{
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/login','auth.login');
-Route::view('/','auth.login');
-Route::view('/cadastro','auth.register');
 
-//Route::get('/', [LoginController::class, 'login']);
+Route::get('/login', [LoginController::class, 'login']);
 
-//Route::get('/cadastro', [CadastroController::class, 'cadastro']);
+Route::get('/cadastro', [CadastroController::class, 'cadastro']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
