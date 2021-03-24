@@ -6,8 +6,9 @@ use App\Http\Controllers\{
 
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', [LoginController::class, 'login']);
+Route::view('/','auth.login');
+Route::view('/cadastro','auth.register');
+//Route::get('/', [LoginController::class, 'login']);
 
 Route::get('/cadastro', [CadastroController::class, 'cadastro']);
 
