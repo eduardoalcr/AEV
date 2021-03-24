@@ -15,14 +15,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource(name:'tasks', controller: \App\Http\Controllers\TaskController::class);
+Route::get('/profile', function () {
+    return view ('dashboard');
+})->middleware('auth');
 
-Route::resource(name:'portugues', controller: \App\Http\Controllers\PortuguesController::class);
+Route::resource(name:'tasks', controller: \App\Http\Controllers\TaskController::class)->middleware('auth');
 
-Route::resource(name:'artes', controller: \App\Http\Controllers\ArtesController::class);
+Route::resource(name:'portugues', controller: \App\Http\Controllers\PortuguesController::class)->middleware('auth');
 
-Route::resource(name:'historia', controller: \App\Http\Controllers\HistoriaController::class);
+Route::resource(name:'artes', controller: \App\Http\Controllers\ArtesController::class)->middleware('auth');
 
-Route::resource(name:'sociologia', controller: \App\Http\Controllers\SociologiaController::class);
+Route::resource(name:'historia', controller: \App\Http\Controllers\HistoriaController::class)->middleware('auth');
 
-Route::resource(name:'filosofia', controller: \App\Http\Controllers\FilosofiaController::class);
+Route::resource(name:'sociologia', controller: \App\Http\Controllers\SociologiaController::class)->middleware('auth');
+
+Route::resource(name:'filosofia', controller: \App\Http\Controllers\FilosofiaController::class)->middleware('auth');
