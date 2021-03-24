@@ -1,13 +1,12 @@
 <?php
 
 use App\Http\Controllers\{
-	IndexController,LoginController,CadastroController
+	LoginController,CadastroController
 };
 
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/login', [LoginController::class, 'login']);
+Route::get('/', [LoginController::class, 'login']);
 
 Route::get('/cadastro', [CadastroController::class, 'cadastro']);
 
