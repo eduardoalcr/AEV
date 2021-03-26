@@ -18,8 +18,10 @@ class CreateMateriasTable extends Migration
             $table->string('mat_nome');
             $table->timestamps();
         });
+
+        
     }
-    
+
     /**
      * Reverse the migrations.
      *

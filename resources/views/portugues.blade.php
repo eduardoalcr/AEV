@@ -27,14 +27,11 @@
 
         for ($a=1; $a < 1000; $a++) { 
             
-        
-            
-
             $users = DB::select('SELECT * FROM enunciados WHERE enu_codigo = ? AND enu_mat_codigo = 1' , [$a]);
             
             $alts = DB::select('SELECT * FROM alternativas WHERE alt_enu_codigo = ?' , [$a]);
 
-
+            
         foreach ($users as $user) {
             ?><h1 style="font-weight: bold; font-size: 1.3rem; text-align: justify; margin-bottom: 10px;padding: 5px;"><?php
 
@@ -44,7 +41,9 @@
 
             foreach ($alts as $alt) {
                 ?> <h2 style="padding: 5px;text-align: justify; font-size: 1.2rem;"> <?php
-                echo $alt->alt_nome."<br>"; 
+                
+                echo $alt->alt_nome."<br>";
+                 
                 ?> </h2> <?php
             }
             foreach ($users as $user) {

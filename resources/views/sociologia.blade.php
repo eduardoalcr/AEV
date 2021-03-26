@@ -30,7 +30,7 @@
         
             
 
-            $users = DB::select('SELECT * FROM enunciados WHERE enu_codigo = ? AND enu_mat_codigo = 4' , [$a]);
+            $users = DB::select('SELECT * FROM enunciados WHERE enu_codigo = ? AND enu_mat_codigo = 3' , [$a]);
             
             $alts = DB::select('SELECT * FROM alternativas WHERE alt_enu_codigo = ?' , [$a]);
 
