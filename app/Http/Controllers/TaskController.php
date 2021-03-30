@@ -108,6 +108,9 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('alternativas')->where('alt_enu_codigo', $id)->delete();
+        DB::table('enunciados')->where('enu_codigo', $id)->delete();
+
+        return redirect('/tasks')->with('msg','A questão foi excluída com sucesso!');
     }
 }
