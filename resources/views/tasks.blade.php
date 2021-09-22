@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             <?php 
             $usuario = Auth::id();
-            if ($usuario == 41) {
+            if ($usuario == 42) {
                  echo "Admin";
              }else{
                 echo "Questões aleatórias";
