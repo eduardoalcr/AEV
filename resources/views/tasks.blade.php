@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             <?php 
             $usuario = Auth::id();
-            if ($usuario == 1) {
+            if ($usuario == 42) {
                  echo "Admin";
              }else{
                 echo "Questões aleatórias";
@@ -42,7 +42,7 @@
             $materias = DB::select('SELECT * FROM materias');
             $userId = Auth::id();
             
-            if ($userId == 1){
+            if ($userId == 42){
                 
                 ?> <select name="materia">
     <option value="10" selected>Escolha uma matéria</option>
